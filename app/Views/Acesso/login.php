@@ -116,6 +116,7 @@
             bottom: 0;
             width: 100%;
         }
+
     </style>
 </head>
 
@@ -124,19 +125,14 @@
 
         <h1><strong>Bem-vindo.</strong> Login.</h1>
 
-        <form action="#" method="post">
+        <form action="<?php echo url_to('login.store') ?>" method="post">
+    <fieldset>
+        <p><input type="text" name="username" required placeholder="Username"></p>
+        <p><input type="password" name="password" required placeholder="Password"></p>
+        <p><input type="submit" value="Login"></p>
+    </fieldset>
+</form>
 
-            <fieldset>
-
-                <p><input type="text" required placeholder="Username"></p>
-
-                <p><input type="password" required placeholder="Password"></p>
-
-                <p><input type="submit" value="Login"></p>
-
-            </fieldset>
-
-        </form>
         <?php if (isset($error)): ?>
             <p class="error">
                 <?= $error ?>
@@ -144,11 +140,9 @@
         <?php endif; ?>
 
     </div>
-
     <footer>
         <p>&copy; 2023 Slynux </p>
     </footer>
-
 </body>
 
 </html>
